@@ -4,8 +4,8 @@ namespace SSOOwinCookieAuthentication.SsoSecurity
 {
     public class SsoSettings
     {
-        internal const string AuthenticationType = "SsoCookies";
-        internal static string CookieName => ConfigurationManager.AppSettings["AppSsoCookieName"] ?? ".myOrg.SingleSignOn";
-        internal static string CookieDomain => ConfigurationManager.AppSettings["AppSsoCookieDomain"] ?? "localhost";
+        public const string AuthenticationType = "SsoCookies";
+        public static string CookieName => ConfigurationManager.AppSettings["AppSsoCookieName"] ?? ".myOrg.SingleSignOn";
+        public static string CookieDomain => ConfigurationManager.AppSettings["AppSsoCookieDomain"] ?? "localhost";
     }
 }
