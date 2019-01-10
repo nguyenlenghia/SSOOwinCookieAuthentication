@@ -15,10 +15,17 @@ namespace SSOOwinCookieAuthentication.Website1
         {
             // Enable the Application Sign In Cookie.
             // UseCookieAuthentication is an extension of Microsoft.Owin.Security.Cookies.CookieAuthenticationExtensions
-            app.UseCookieAuthentication(new CookieAuthenticationOptions());
+            app.UseCookieAuthentication(new CookieAuthenticationOptions()
+            {
+                AuthenticationType = SsoSettings.AuthenticationType,
+
+                // The value of CookieName and CookieDomain must is the same in every sso website.
+                CookieName = SsoSettings.CookieName,
+                CookieDomain = SsoSettings.CookieDomain,
+            });
 
             // Set default Way to SignIn as AuthenticationType
-            app.SetDefaultSignInAsAuthenticationType(CookieAuthenticationDefaults.AuthenticationType);
+            app.SetDefaultSignInAsAuthenticationType(AppSettings.AuthenticationType);
         }
     }
 }

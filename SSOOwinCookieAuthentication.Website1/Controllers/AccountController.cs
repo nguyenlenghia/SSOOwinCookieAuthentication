@@ -14,7 +14,7 @@ namespace SSOOwinCookieAuthentication.Website1.Controllers
         /// <summary>
         /// The owin authentication type name
         /// </summary>
-        public readonly string AuthenticationType = CookieAuthenticationDefaults.AuthenticationType;
+        public readonly string AuthenticationType = AppSettings.AuthenticationType;
 
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
